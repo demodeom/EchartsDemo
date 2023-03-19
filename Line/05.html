@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #chart-line {
+            width: 800px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+<div id="chart-line">
+
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.1/echarts.min.js"></script>
+<script>
+    let chartLineElem = document.getElementById('chart-line')
+    let chartLine = echarts.init(chartLineElem)
+    let option = {
+        xAxis: {
+            type: "category",
+            data: [1, 2, 3, 4, 5, 6, 7],
+            // boundaryGap: true,
+            boundaryGap: false
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [
+            {
+                type: "line",
+                data: [30, 20, 50, 70, 40, 35, 45],
+                smooth: true,
+                areaStyle:{}
+            }
+        ]
+    }
+    chartLine.setOption(option)
+</script>
+</body>
+</html>
